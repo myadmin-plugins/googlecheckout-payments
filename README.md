@@ -1,6 +1,6 @@
-# GoogleCheckout handling plugin for MyAdmin
+# Googlecheckout handling plugin for MyAdmin
 
-GoogleCheckout handling plugin for MyAdmin
+Googlecheckout handling plugin for MyAdmin
 
 ## Build Status and Code Analysis
 
@@ -24,5 +24,5 @@ composer require detain/myadmin-googlecheckout-payments
 
 ## License
 
-The GoogleCheckout handling plugin for MyAdmin class is licensed under the LGPL-v2 license.
+The Googlecheckout handling plugin for MyAdmin class is licensed under the LGPL-v2 license.
 

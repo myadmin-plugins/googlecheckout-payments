@@ -1,7 +1,7 @@
 {
     "name": "detain/myadmin-googlecheckout-payments",
     "type": "myadmin-plugin",
-    "description": "GoogleCheckout handling plugin for MyAdmin",
+    "description": "Googlecheckout handling plugin for MyAdmin",
     "keywords": ["abuse","administration","spam"],
     "license": "LGPL-2.1",
     "authors": [
@@ -28,6 +28,6 @@
 		"codacy/coverage": "dev-master"
 	},
     "autoload": {
-        "psr-4": {"Detain\\MyAdminGoogleCheckout\\": "src/"}
+        "psr-4": {"Detain\\MyAdminGooglecheckout\\": "src/"}
     }
 }
