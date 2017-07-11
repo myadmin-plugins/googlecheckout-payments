@@ -17,7 +17,7 @@ class Plugin {
 
 	public static function getHooks() {
 		return [
-			//'system.settings' => [__CLASS__, 'getSettings'],
+			'system.settings' => [__CLASS__, 'getSettings'],
 			//'ui.menu' => [__CLASS__, 'getMenu'],
 		];
 	}
@@ -41,8 +41,12 @@ class Plugin {
 
 	public static function getSettings(GenericEvent $event) {
 		$settings = $event->getSubject();
-		$settings->add_text_setting('General', 'Googlecheckout', 'abuse_imap_user', 'Googlecheckout IMAP User:', 'Googlecheckout IMAP Username', ABUSE_IMAP_USER);
-		$settings->add_text_setting('General', 'Googlecheckout', 'abuse_imap_pass', 'Googlecheckout IMAP Pass:', 'Googlecheckout IMAP Password', ABUSE_IMAP_PASS);
+		$settings->add_radio_setting('Billing', 'Google Checkout', 'google_checkout_enabled', 'Enable Google Checkout', 'Enable Google Checkout', GOOGLE_CHECKOUT_ENABLED, [true, false], ['Enabled', 'Disabled']);
+		$settings->add_dropdown_setting('Billing', 'Google Checkout', 'google_checkout_sandbox', 'Use Sandbox/Test Environment', 'Use Sandbox/Test Environment', GOOGLE_CHECKOUT_SANDBOX, [false, true], ['Live Environment', 'Sandbox Test Environment']);
+		$settings->add_text_setting('Billing', 'Google Checkout', 'google_checkout_merchant_id', 'Live Merchant ID', 'Live Merchant ID', (defined('GOOGLE_CHECKOUT_MERCHANT_ID') ? GOOGLE_CHECKOUT_MERCHANT_ID : ''));
+		$settings->add_text_setting('Billing', 'Google Checkout', 'google_checkout_merchant_key', 'Live Merchant Key', 'Live Merchant Key', (defined('GOOGLE_CHECKOUT_MERCHANT_KEY') ? GOOGLE_CHECKOUT_MERCHANT_KEY : ''));
+		$settings->add_text_setting('Billing', 'Google Checkout', 'google_checkout_sandbox_merchant_id', 'Sandbox Merchant ID', 'Sandbox Merchant ID', (defined('GOOGLE_CHECKOUT_SANDBOX_MERCHANT_ID') ? GOOGLE_CHECKOUT_SANDBOX_MERCHANT_ID : ''));
+		$settings->add_text_setting('Billing', 'Google Checkout', 'google_checkout_sandbox_merchant_key', 'Sandbox Merchant Key', 'Sandbox Merchant Key', (defined('GOOGLE_CHECKOUT_SANDBOX_MERCHANT_KEY') ? GOOGLE_CHECKOUT_SANDBOX_MERCHANT_KEY : ''));
 	}
 
 }
