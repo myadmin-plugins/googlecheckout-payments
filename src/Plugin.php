@@ -4,6 +4,11 @@ namespace Detain\MyAdminGooglecheckout;
 
 use Symfony\Component\EventDispatcher\GenericEvent;
 
+/**
+ * Class Plugin
+ *
+ * @package Detain\MyAdminGooglecheckout
+ */
 class Plugin {
 
 	public static $name = 'Googlecheckout Plugin';
@@ -11,10 +16,15 @@ class Plugin {
 	public static $help = '';
 	public static $type = 'plugin';
 
-
+	/**
+	 * Plugin constructor.
+	 */
 	public function __construct() {
 	}
 
+	/**
+	 * @return array
+	 */
 	public static function getHooks() {
 		return [
 			'system.settings' => [__CLASS__, 'getSettings'],
@@ -22,6 +32,9 @@ class Plugin {
 		];
 	}
 
+	/**
+	 * @param \Symfony\Component\EventDispatcher\GenericEvent $event
+	 */
 	public static function getMenu(GenericEvent $event) {
 		$menu = $event->getSubject();
 		if ($GLOBALS['tf']->ima == 'admin') {
@@ -31,6 +44,9 @@ class Plugin {
 		}
 	}
 
+	/**
+	 * @param \Symfony\Component\EventDispatcher\GenericEvent $event
+	 */
 	public static function getRequirements(GenericEvent $event) {
 		$loader = $event->getSubject();
 		$loader->add_requirement('class.Googlecheckout', '/../vendor/detain/myadmin-googlecheckout-payments/src/Googlecheckout.php');
@@ -39,6 +55,9 @@ class Plugin {
 		$loader->add_requirement('get_abuse_licenses', '/../vendor/detain/myadmin-googlecheckout-payments/src/abuse.inc.php');
 	}
 
+	/**
+	 * @param \Symfony\Component\EventDispatcher\GenericEvent $event
+	 */
 	public static function getSettings(GenericEvent $event) {
 		$settings = $event->getSubject();
 		$settings->add_radio_setting('Billing', 'Google Checkout', 'google_checkout_enabled', 'Enable Google Checkout', 'Enable Google Checkout', GOOGLE_CHECKOUT_ENABLED, [true, false], ['Enabled', 'Disabled']);
