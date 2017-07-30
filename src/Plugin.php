@@ -12,7 +12,7 @@ use Symfony\Component\EventDispatcher\GenericEvent;
 class Plugin {
 
 	public static $name = 'Googlecheckout Plugin';
-	public static $description = 'Allows handling of Googlecheckout emails and honeypots';
+	public static $description = 'Allows handling of Googlecheckout based Payments through their Payment Processor/Payment System.';
 	public static $help = '';
 	public static $type = 'plugin';
 
