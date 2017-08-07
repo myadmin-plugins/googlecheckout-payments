@@ -29,6 +29,7 @@ class Plugin {
 		return [
 			'system.settings' => [__CLASS__, 'getSettings'],
 			//'ui.menu' => [__CLASS__, 'getMenu'],
+			'function.requirements' => [__CLASS__, 'getRequirements'],
 		];
 	}
 
@@ -49,10 +50,9 @@ class Plugin {
 	 */
 	public static function getRequirements(GenericEvent $event) {
 		$loader = $event->getSubject();
-		$loader->add_requirement('class.Googlecheckout', '/../vendor/detain/myadmin-googlecheckout-payments/src/Googlecheckout.php');
-		$loader->add_requirement('deactivate_kcare', '/../vendor/detain/myadmin-googlecheckout-payments/src/abuse.inc.php');
-		$loader->add_requirement('deactivate_abuse', '/../vendor/detain/myadmin-googlecheckout-payments/src/abuse.inc.php');
-		$loader->add_requirement('get_abuse_licenses', '/../vendor/detain/myadmin-googlecheckout-payments/src/abuse.inc.php');
+		$loader->add_requirement('view_google_transaction', '/../vendor/detain/myadmin-googlecheckout-payments/src/view_google_transaction.php');
+		$loader->add_requirement('view_google_order', '/../vendor/detain/myadmin-googlecheckout-payments/src/view_google_order.php');
+		$loader->add_requirement('pay_balance_google', '/../vendor/detain/myadmin-googlecheckout-payments/src/pay_balance_google.php');
 	}
 
 	/**
