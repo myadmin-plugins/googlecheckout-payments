@@ -3,8 +3,7 @@
 * Billing Services related functions.
 *
 * This file has the general functions used heavily both by billing related code.
-* Last Changed: $LastChangedDate: 2017-06-24 21:22:10 -0400 (Sat, 24 Jun 2017) $
-* @author detain
+* @author Joe Huss <detain@interserver.net>
 * @copyright 2017
 * @package MyAdmin
 * @category Billing
