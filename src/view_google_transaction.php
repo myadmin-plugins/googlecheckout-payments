@@ -5,10 +5,10 @@
 			$db = clone $GLOBALS['tf']->db;
 			$module = get_module_name((isset($GLOBALS['tf']->variables->request['module']) ? $GLOBALS['tf']->variables->request['module'] : 'default'));
 			$transaction = $db->real_escape($GLOBALS['tf']->variables->request['transaction']);
-			$db->query("select * from gcheckout where google_order='$transaction'");
+			$db->query("select * from gcheckout where google_order='{$transaction}'");
 			if ($db->num_rows() == 0) {
 				$db = get_module_db($module);
-				$db->query("select * from gcheckout where google_order='$transaction'");
+				$db->query("select * from gcheckout where google_order='{$transaction}'");
 			}
 			if ($db->num_rows() > 0) {
 

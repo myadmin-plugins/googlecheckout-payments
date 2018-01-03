@@ -13,7 +13,7 @@ function view_google_order() {
 	if (isset($_SERVER['HTTP_REFERER']) && preg_match('/google\.com\/.*t=(.*)$/', $_SERVER['HTTP_REFERER'], $matches)) {
 		$order = $matches[1];
 		$db = clone $GLOBALS['tf']->db;
-		$db->query("select * from gcheckout where google_order='$order' and _type='link'", __LINE__, __FILE__);
+		$db->query("select * from gcheckout where google_order='{$order}' and _type='link'", __LINE__, __FILE__);
 		if ($db->num_rows() > 0) {
 			$db->next_record(MYSQL_ASSOC);
 			$GLOBALS['tf']->redirect($GLOBALS['tf']->link('index.php', $db->Record['data']));
