@@ -9,7 +9,8 @@
 * @category Billing
 */
 
-function view_google_order() {
+function view_google_order()
+{
 	if (isset($_SERVER['HTTP_REFERER']) && preg_match('/google\.com\/.*t=(.*)$/', $_SERVER['HTTP_REFERER'], $matches)) {
 		$order = $matches[1];
 		$db = clone $GLOBALS['tf']->db;
@@ -20,4 +21,3 @@ function view_google_order() {
 		}
 	}
 }
-

@@ -1,6 +1,7 @@
 <?php
 
-	function view_google_transaction() {
+	function view_google_transaction()
+	{
 		if ($GLOBALS['tf']->ima == 'admin') {
 			$db = clone $GLOBALS['tf']->db;
 			$module = get_module_name((isset($GLOBALS['tf']->variables->request['module']) ? $GLOBALS['tf']->variables->request['module'] : 'default'));
@@ -19,28 +20,32 @@
 				 * @throws \Exception
 				 * @throws \SmartyException
 				 */
-				function google_table($table, $data) {
+				function google_table($table, $data)
+				{
 					//echo '<pre>';print_r($data);echo '</pre>';
 					if (is_bool($table) && $table === false) {
 						$started = true;
 						$table = new TFTable;
 						$table->hide_title();
-					} else
+					} else {
 						$started = false;
-					foreach ($data as $key => $value)
+					}
+					foreach ($data as $key => $value) {
 						if (null !== $value && (is_array($value) || trim($value) != '')) {
 							$table->set_col_options('style="vertical-align: top;"');
 							$table->add_field(ucwords(str_replace('_', ' ', $key)), 'r');
-							if (is_array($value))
+							if (is_array($value)) {
 								$table->add_field(google_table(false, $value));
-							elseif (preg_match('/^a:[0-9]+:{.*}$/s', $value))
+							} elseif (preg_match('/^a:[0-9]+:{.*}$/s', $value)) {
 								$table->add_field(google_table(false, myadmin_unstringify($value)));
-							elseif ($key == 'lid')
+							} elseif ($key == 'lid') {
 								$table->add_field($table->make_link('choice=none.search&amp;search='.$value, $value), 'r');
-							else
+							} else {
 								$table->add_field($value, 'r');
+							}
 							$table->add_row();
 						}
+					}
 					if ($started === true) {
 						return $table->get_table();
 					} else {

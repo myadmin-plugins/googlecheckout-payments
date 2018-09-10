@@ -1,17 +1,20 @@
 <?php
 
-	function pay_balance_google() {
+	function pay_balance_google()
+	{
 		myadmin_log('billing', 'info', 'Pay with Google Called', __LINE__, __FILE__);
 		page_title('Pay Balance With Google Checkout');
 		$table = new TFTable;
-		if ($GLOBALS['tf']->ima == 'admin')
+		if ($GLOBALS['tf']->ima == 'admin') {
 			$custid = $GLOBALS['tf']->db->real_escape($GLOBALS['tf']->variables->request['custid']);
-		else
+		} else {
 			$custid = $GLOBALS['tf']->session->account_id;
+		}
 		$table = new TFTable;
 		$module = 'default';
-		if (isset($GLOBALS['tf']->variables->request['module']))
+		if (isset($GLOBALS['tf']->variables->request['module'])) {
 			$module = $GLOBALS['tf']->variables->request['module'];
+		}
 		$module = get_module_name($module);
 		$settings = \get_module_settings($module);
 		$custid = get_custid($custid, $module);
@@ -90,10 +93,11 @@
 		//echo '<pre>';print_r($gresponse);echo '</pre>';
 		if ($gresponse['_type'] == 'checkout-redirect') {
 			$table->set_colspan(2);
-			if (GOOGLE_CHECKOUT_SANDBOX === true)
+			if (GOOGLE_CHECKOUT_SANDBOX === true) {
 				$table->add_field('<a href="'.$gresponse['redirect-url'].'"><img src="http://sandbox.google.com/checkout/buttons/checkout.gif?merchant_id='.GOOGLE_CHECKOUT_SANDBOX_MERCHANT_ID.'&w=160&h=43&style=trans&variant=text&loc=en_US" height=43 width=160 alt="Google Checkout"></a>');
-			else
+			} else {
 				$table->add_field('<a href="'.$gresponse['redirect-url'].'"><img src="http://checkout.google.com/buttons/checkout.gif?merchant_id='.GOOGLE_CHECKOUT_MERCHANT_ID.'&w=160&h=43&style=trans&variant=text&loc=en_US" height=43 width=160 alt="Google Checkout"></a>');
+			}
 			$table->add_row();
 		}
 		// END GOOGLE CHECKOUT CODE
