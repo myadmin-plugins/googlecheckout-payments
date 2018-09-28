@@ -1,5 +1,5 @@
 {
-	"name": "detain/myadmin-googlecheckout-payments",
+	"name": "detain/googlecheckout-payments",
 	"type": "myadmin-plugin",
 	"description": "Googlecheckout handling plugin for MyAdmin",
 	"keywords": [

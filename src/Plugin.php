@@ -55,9 +55,9 @@ class Plugin
 	public static function getRequirements(GenericEvent $event)
 	{
 		$loader = $event->getSubject();
-		$loader->add_page_requirement('view_google_transaction', '/../vendor/detain/myadmin-googlecheckout-payments/src/view_google_transaction.php');
-		$loader->add_page_requirement('view_google_order', '/../vendor/detain/myadmin-googlecheckout-payments/src/view_google_order.php');
-		$loader->add_page_requirement('pay_balance_google', '/../vendor/detain/myadmin-googlecheckout-payments/src/pay_balance_google.php');
+		$loader->add_page_requirement('view_google_transaction', '/../vendor/detain/googlecheckout-payments/src/view_google_transaction.php');
+		$loader->add_page_requirement('view_google_order', '/../vendor/detain/googlecheckout-payments/src/view_google_order.php');
+		$loader->add_page_requirement('pay_balance_google', '/../vendor/detain/googlecheckout-payments/src/pay_balance_google.php');
 	}
 
 	/**
