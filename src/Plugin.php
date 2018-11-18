@@ -71,11 +71,11 @@ class Plugin
          * @var \MyAdmin\Settings $settings
          **/
         $settings = $event->getSubject();
-		$settings->add_radio_setting(__('Billing'), __('Google Checkout'), 'google_checkout_enabled', __('Enable Google Checkout'), __('Enable Google Checkout'), GOOGLE_CHECKOUT_ENABLED, [true, false], ['Enabled', 'Disabled']);
-		$settings->add_dropdown_setting(__('Billing'), __('Google Checkout'), 'google_checkout_sandbox', __('Use Sandbox/Test Environment'), __('Use Sandbox/Test Environment'), GOOGLE_CHECKOUT_SANDBOX, [false, true], ['Live Environment', 'Sandbox Test Environment']);
-		$settings->add_text_setting(__('Billing'), __('Google Checkout'), 'google_checkout_merchant_id', __('Live Merchant ID'), __('Live Merchant ID'), (defined('GOOGLE_CHECKOUT_MERCHANT_ID') ? GOOGLE_CHECKOUT_MERCHANT_ID : ''));
-		$settings->add_text_setting(__('Billing'), __('Google Checkout'), 'google_checkout_merchant_key', __('Live Merchant Key'), __('Live Merchant Key'), (defined('GOOGLE_CHECKOUT_MERCHANT_KEY') ? GOOGLE_CHECKOUT_MERCHANT_KEY : ''));
-		$settings->add_text_setting(__('Billing'), __('Google Checkout'), 'google_checkout_sandbox_merchant_id', __('Sandbox Merchant ID'), __('Sandbox Merchant ID'), (defined('GOOGLE_CHECKOUT_SANDBOX_MERCHANT_ID') ? GOOGLE_CHECKOUT_SANDBOX_MERCHANT_ID : ''));
-		$settings->add_text_setting(__('Billing'), __('Google Checkout'), 'google_checkout_sandbox_merchant_key', __('Sandbox Merchant Key'), __('Sandbox Merchant Key'), (defined('GOOGLE_CHECKOUT_SANDBOX_MERCHANT_KEY') ? GOOGLE_CHECKOUT_SANDBOX_MERCHANT_KEY : ''));
+		$settings->add_radio_setting(_('Billing'), _('Google Checkout'), 'google_checkout_enabled', _('Enable Google Checkout'), _('Enable Google Checkout'), GOOGLE_CHECKOUT_ENABLED, [true, false], ['Enabled', 'Disabled']);
+		$settings->add_dropdown_setting(_('Billing'), _('Google Checkout'), 'google_checkout_sandbox', _('Use Sandbox/Test Environment'), _('Use Sandbox/Test Environment'), GOOGLE_CHECKOUT_SANDBOX, [false, true], ['Live Environment', 'Sandbox Test Environment']);
+		$settings->add_text_setting(_('Billing'), _('Google Checkout'), 'google_checkout_merchant_id', _('Live Merchant ID'), _('Live Merchant ID'), (defined('GOOGLE_CHECKOUT_MERCHANT_ID') ? GOOGLE_CHECKOUT_MERCHANT_ID : ''));
+		$settings->add_text_setting(_('Billing'), _('Google Checkout'), 'google_checkout_merchant_key', _('Live Merchant Key'), _('Live Merchant Key'), (defined('GOOGLE_CHECKOUT_MERCHANT_KEY') ? GOOGLE_CHECKOUT_MERCHANT_KEY : ''));
+		$settings->add_text_setting(_('Billing'), _('Google Checkout'), 'google_checkout_sandbox_merchant_id', _('Sandbox Merchant ID'), _('Sandbox Merchant ID'), (defined('GOOGLE_CHECKOUT_SANDBOX_MERCHANT_ID') ? GOOGLE_CHECKOUT_SANDBOX_MERCHANT_ID : ''));
+		$settings->add_text_setting(_('Billing'), _('Google Checkout'), 'google_checkout_sandbox_merchant_key', _('Sandbox Merchant Key'), _('Sandbox Merchant Key'), (defined('GOOGLE_CHECKOUT_SANDBOX_MERCHANT_KEY') ? GOOGLE_CHECKOUT_SANDBOX_MERCHANT_KEY : ''));
 	}
 }
