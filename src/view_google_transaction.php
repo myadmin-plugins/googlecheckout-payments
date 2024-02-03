@@ -4,7 +4,7 @@
     {
         if ($GLOBALS['tf']->ima == 'admin') {
             $db = clone $GLOBALS['tf']->db;
-            $module = get_module_name((isset($GLOBALS['tf']->variables->request['module']) ? $GLOBALS['tf']->variables->request['module'] : 'default'));
+            $module = get_module_name(($GLOBALS['tf']->variables->request['module'] ?? 'default'));
             $transaction = $db->real_escape($GLOBALS['tf']->variables->request['transaction']);
             $db->query("select * from gcheckout where google_order='{$transaction}'");
             if ($db->num_rows() == 0) {
