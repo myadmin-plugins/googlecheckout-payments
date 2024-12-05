@@ -4,7 +4,7 @@
 *
 * This file has the general functions used heavily both by billing related code.
 * @author Joe Huss <detain@interserver.net>
-* @copyright 2019
+* @copyright 2025
 * @package MyAdmin
 * @category Billing
 */
