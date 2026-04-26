@@ -2,10 +2,10 @@
 
     function view_google_transaction()
     {
-        if ($GLOBALS['tf']->ima == 'admin') {
-            $db = clone $GLOBALS['tf']->db;
-            $module = get_module_name(($GLOBALS['tf']->variables->request['module'] ?? 'default'));
-            $transaction = $db->real_escape($GLOBALS['tf']->variables->request['transaction']);
+        if (\MyAdmin\App::ima() == 'admin') {
+            $db = clone \MyAdmin\App::db();
+            $module = get_module_name((\MyAdmin\App::variables()->request['module'] ?? 'default'));
+            $transaction = $db->real_escape(\MyAdmin\App::variables()->request['transaction']);
             $db->query("select * from gcheckout where google_order='{$transaction}'");
             if ($db->num_rows() == 0) {
                 $db = get_module_db($module);
