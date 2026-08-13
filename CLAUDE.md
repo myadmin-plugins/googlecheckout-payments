@@ -64,7 +64,6 @@ $gresponse = getcurlpage('https://checkout.google.com/api/checkout/v2/merchantCh
 - Merchant keys are password settings — never log or output `GOOGLE_CHECKOUT_MERCHANT_KEY` or `GOOGLE_CHECKOUT_SANDBOX_MERCHANT_KEY`
 - Admin-only views must gate on `$GLOBALS['tf']->ima == 'admin'`
 
-<!-- caliber:managed:pre-commit -->
 ## Plugin contract harness
 
 This package is on the shared contract harness from `detain/myadmin-plugin-installer`.
@@ -87,6 +86,7 @@ contract class primes constants and calls `register_module()`, neither of which 
 See the `plugin-contract-tests` skill for the full workflow, and `docs/testing-harness.md` in
 the installer.
 
+<!-- caliber:managed:pre-commit -->
 ## Before Committing
 
 **IMPORTANT:** Before every git commit, you MUST ensure Caliber syncs agent configs with the latest code changes.
