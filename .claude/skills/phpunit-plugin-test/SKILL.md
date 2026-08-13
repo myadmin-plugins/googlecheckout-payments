@@ -1,6 +1,6 @@
 ---
 name: phpunit-plugin-test
-description: Adds a PHPUnit test method to tests/PluginTest.php for plugin hook registration, static properties, or settings verification. Use when user says 'add test', 'write test', 'test plugin', or 'test settings'. Follows phpunit.xml.dist config and vendor/bin/phpunit --bootstrap vendor/autoload.php tests/ invocation. Do NOT use for integration tests or tests requiring a live DB/HTTP. NOTE: for a plugin's contract/behavioral tests (tests/ContractTest.php, the shared harness, composer myadmin:scaffold-tests) use the plugin-contract-tests skill instead — this skill's reflection-only guidance predates that harness.
+description: Adds a PHPUnit test method to tests/PluginTest.php for plugin hook registration, static properties, or settings verification. Use when user says 'add test', 'write test', 'test plugin', or 'test settings'. Follows phpunit.xml.dist config and vendor/bin/phpunit --bootstrap vendor/autoload.php tests/ invocation. Do NOT use for integration tests or tests requiring a live DB/HTTP. For a plugin's contract or behavioral tests (tests/ContractTest.php, the shared harness, composer myadmin:scaffold-tests) use the plugin-contract-tests skill instead — this skill's reflection-only guidance predates that harness.
 ---
 <!-- myadmin-contract-harness-notice -->
 > ### ⚠️ Read this before the rest of the file
